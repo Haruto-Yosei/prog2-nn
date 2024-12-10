@@ -71,11 +71,11 @@ for k in range(n_epochs):
     loss_train=models.train(model,dataloader_train,loss_fn,optimizer)
     time_end=time.time()
     loss_train_history.append(loss_train)
-    print(f'train loss:{loss_train:.3f}({time_end-time_start}s)')
+    print(f'train loss:{loss_train:.3f}({time_end-time_start}s)',end=',')
 
     loss_test=models.test(model,dataloader_test,loss_fn,optimizer)
     loss_test_history.append(loss_test)
-    print(f'test loss:{loss_test}',ens=': ')
+    print(f'test loss:{loss_test}',end=': ')
 
     models.train(model,dataloader_train,loss_fn,optimizer)
 
@@ -102,5 +102,3 @@ plt.ylabel('accuracy')
 plt.legend()
 plt.grid()
 plt.show()
-
-print('Hello World') #コメント
