@@ -42,7 +42,6 @@ for image_batch,label_batch in dataloader_test:
     print(label_batch.shape)
     break
 
-
 model=models.MyModel()
 
 acc_train=models.test_accuracy(model,dataloader_train)
