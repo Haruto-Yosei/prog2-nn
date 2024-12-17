@@ -20,9 +20,10 @@ class MyModel(nn.Module):
         return logits
 
 
-def test_accuracy(model,dataloader):
+def test_accuracy(model,dataloader,device='cpu'):
     n_corrects=0
-
+    
+    model.to(device)
     model.eval()
     for image_batch,label_batch in dataloader:
         with torch.no_grad():
