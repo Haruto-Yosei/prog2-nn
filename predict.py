@@ -1,3 +1,4 @@
+'''predict'''
 import matplotlib.pyplot as plt
 import torch
 from torchvision import datasets
@@ -14,7 +15,8 @@ ds_train=datasets.FashionMNIST(
     download=True,
     transforms=transforms.Compose([
         transforms.ToImage(),
-        transforms.ToDtype(torch.float32,scale=True)])
+        transforms.ToDtype(torch.float32,scale=True)
+        ])
 )
 
 image,target=ds_train[0]
